@@ -23,7 +23,7 @@ class ContactsTableSeeder extends Seeder
         $contacts = [];
         $faker = Faker::create();
 
-        foreach(range(1, 10) as $index)
+        foreach(range(1, 50) as $index)
         {
             $contacts[] = [
                 'first_name' => $faker->firstName,
