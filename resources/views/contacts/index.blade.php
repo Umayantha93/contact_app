@@ -34,7 +34,7 @@
                     @if($contacts->count())
                       @foreach($contacts as $index => $contact)
                         <tr>
-                          <th scope="row">{{$index + 1}}</th>
+                          <th scope="row">{{$index + $contacts->firstItem()}}</th>
                             <td>{{$contact->first_name}}</td>
                             <td>{{$contact->last_name}}</td>
                             <td>{{$contact->email}}</td>
@@ -52,7 +52,7 @@
 
                 
 
-                {{$contacts->links()}}
+                {{$contacts->appends(request()->only('company_id'))->links()}}
               </div>
             </div>
           </div>
