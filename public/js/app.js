@@ -6,3 +6,17 @@ document.getElementById('filter_company_id').addEventListener('change', function
 
     window.location.href = window.location.href.split('?')[0] + '?company_id=' + companyId
 })
+
+
+
+document.querySelectorAll('.btn-delete').forEach((button) => {
+    button.addEventListener('click', function (event) {
+        event.preventDefault()
+        if(confirm("Are You Sure?")) {
+            let action = this.getAttribute('href')
+            let form = document.getElementById('form-delete')
+            form.setAttribute('action', action)
+            form.submit()
+        }
+    })
+})
